@@ -1,5 +1,5 @@
 {% set name = "PySimpleGUIQt" %}
-{% set version = "0.34.0" %}
+{% set version = "0.35.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f73558aeeba46f53caf7941c2ae3dd69d9c5164079e3d84936d8639d606e279d
+  sha256: 2c18ea261554235a2cdaee76e616d0adc148501e89bf4112a798f2a69bf3c8b5
 
 build:
   noarch: python
