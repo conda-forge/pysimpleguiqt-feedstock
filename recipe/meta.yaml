@@ -6,23 +6,25 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name }}-{{ version }}.tar.gz
   sha256: 2c18ea261554235a2cdaee76e616d0adc148501e89bf4112a798f2a69bf3c8b5
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.4
+    - python {{ python_min }}
   run:
-    - python >=3.4
+    - python >={{ python_min }}
     - pyside2
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - PySimpleGUIQt
 
